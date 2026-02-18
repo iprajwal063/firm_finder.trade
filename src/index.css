@@ -1,0 +1,137 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Space Grotesk", system-ui, sans-serif;
+  background: hsl(0, 0%, 4%);
+  color: hsl(0, 0%, 95%);
+  overflow-x: hidden;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(0, 0%, 6%);
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(15, 100%, 50%);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(15, 100%, 60%);
+}
+
+/* Glassmorphism effect */
+.glass-effect {
+  background: rgba(10, 10, 10, 0.5);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 87, 34, 0.1);
+}
+
+.glass-effect-subtle {
+  background: rgba(10, 10, 10, 0.3);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 87, 34, 0.05);
+}
+
+/* Glow effects */
+.glow-accent {
+  box-shadow: 0 0 20px rgba(255, 87, 34, 0.3);
+}
+
+.glow-accent-strong {
+  box-shadow: 0 0 40px rgba(255, 87, 34, 0.5);
+}
+
+/* Smooth transitions */
+.transition-smooth {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.transition-fast {
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Hover effects */
+.hover-glow:hover {
+  box-shadow: 0 0 30px rgba(255, 87, 34, 0.4);
+}
+
+/* Page transition container */
+.page-enter {
+  animation: fade-in 0.6s ease-out;
+}
+
+.page-exit {
+  animation: fade-out 0.3s ease-in;
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Responsive utilities */
+@media (max-width: 768px) {
+  .hidden-mobile {
+    display: none !important;
+  }
+}
+
+@media (min-width: 769px) {
+  .hidden-desktop {
+    display: none !important;
+  }
+}
+
+/* Gradient backgrounds */
+.gradient-accent {
+  background: linear-gradient(135deg, hsl(15, 100%, 50%), hsl(15, 100%, 35%));
+}
+
+.gradient-dark {
+  background: linear-gradient(135deg, hsl(0, 0%, 6%), hsl(0, 0%, 15%));
+}
+
+/* Badge styles */
+.badge {
+  @apply px-3 py-1 rounded-full text-sm font-medium;
+  background: rgba(255, 87, 34, 0.1);
+  color: hsl(15, 100%, 50%);
+  border: 1px solid rgba(255, 87, 34, 0.2);
+}
+
+.badge-dark {
+  background: rgba(10, 10, 10, 0.5);
+  border: 1px solid rgba(255, 87, 34, 0.15);
+}
+
+/* Card hover lift */
+.card-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(255, 87, 34, 0.2);
+}
